@@ -22,4 +22,11 @@ class FractionTest {
 
         assertEquals(2, result.denominator)
     }
+
+    @Test
+    fun `should calculate whole numbers`() {
+        val result = Fraction(1).add(Fraction(1))
+
+        assertEquals(2, result.number)
+    }
 }

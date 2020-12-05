@@ -1,6 +1,6 @@
 import kotlin.math.min
 
-data class Fraction(val number: Int, val denominator: Int) {
+data class Fraction(val number: Int, val denominator: Int = 1) {
 
     fun add(otherFraction: Fraction): Fraction {
         val commonDenominator = calculateDenominator(otherFraction)
@@ -24,7 +24,7 @@ data class Fraction(val number: Int, val denominator: Int) {
             return Fraction(tempNumber, tempDenominator)
         }
 
-        return Fraction(1,1)
+        return this
     }
 
     private fun withDenominator(targetDenominator: Int): Fraction {
