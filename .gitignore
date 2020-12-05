@@ -1,0 +1,8 @@
+
+target/test-classes/
+
+.idea/
+
+.DS_Store
+
+mainModule.iml
