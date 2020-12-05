@@ -24,9 +24,16 @@ class FractionTest {
     }
 
     @Test
-    fun `should calculate whole numbers`() {
+    fun `should add whole numbers`() {
         val result = 1.toFraction().add(1.toFraction())
 
         assertEquals(2, result.number)
+    }
+
+    @Test
+    fun `should add zeros`() {
+        val result = 0.toFraction().add(0.toFraction())
+
+        assertEquals(0, result.number)
     }
 }
