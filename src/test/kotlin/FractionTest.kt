@@ -25,7 +25,7 @@ class FractionTest {
 
     @Test
     fun `should calculate whole numbers`() {
-        val result = Fraction(1).add(Fraction(1))
+        val result = 1.toFraction().add(1.toFraction())
 
         assertEquals(2, result.number)
     }

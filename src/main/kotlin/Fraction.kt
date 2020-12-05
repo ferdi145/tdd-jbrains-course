@@ -66,3 +66,7 @@ data class Fraction(val number: Int, val denominator: Int = 1) {
 
     private fun isEven(number: Int) = number % 2 == 0
 }
+
+fun Int.toFraction(): Fraction {
+    return Fraction(this)
+}
