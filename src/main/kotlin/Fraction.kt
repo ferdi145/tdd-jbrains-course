@@ -7,7 +7,24 @@ data class Fraction(val number: Int, val denominator: Int) {
         val (number1) = this.withDenominator(commonDenominator)
         val (number2) = otherFraction.withDenominator(commonDenominator)
 
-        return Fraction(number1 + number2, commonDenominator)
+        return Fraction(number1 + number2, commonDenominator).lowestDenominator()
+    }
+
+    private fun lowestDenominator(): Fraction {
+        if (this.number == this.denominator) return Fraction(1, 1)
+
+        if (isEven(this.number) && isEven(this.denominator)) {
+            var tempNumber = this.number;
+            var tempDenominator = this.denominator;
+            while(tempNumber != 2 && tempDenominator != 2) {
+                tempNumber = tempNumber / 2
+                tempDenominator = tempDenominator / 2
+            }
+
+            return Fraction(tempNumber, tempDenominator)
+        }
+
+        return Fraction(1,1)
     }
 
     private fun withDenominator(targetDenominator: Int): Fraction {
@@ -44,11 +61,7 @@ data class Fraction(val number: Int, val denominator: Int) {
     }
 
     private fun findCommonDenominator(otherFraction: Fraction): Int {
-        return if (isEven(this.denominator) && isEven(otherFraction.denominator)) {
-            min(this.denominator, otherFraction.denominator)
-        } else {
-            1
-        }
+        return this.denominator * otherFraction.denominator
     }
 
     private fun isEven(number: Int) = number % 2 == 0
