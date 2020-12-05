@@ -10,6 +10,13 @@ class FractionTest {
     }
 
     @Test
+    fun `should add two fractions with different denominator`() {
+        val result = Fraction(1,2).add(Fraction(2,4))
+
+        assertEquals(Fraction(2,2), result)
+    }
+
+    @Test
     fun `should calculate common denominator`() {
         val result = Fraction(1,2).add(Fraction(1,4))
 
