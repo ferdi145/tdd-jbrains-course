@@ -1,3 +1,5 @@
+package com.github.ferdi145.fraction
+
 import kotlin.math.min
 
 data class Fraction(val number: Int, val denominator: Int = 1) {
