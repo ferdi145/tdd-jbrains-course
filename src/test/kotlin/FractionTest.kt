@@ -31,6 +31,13 @@ class FractionTest {
     }
 
     @Test
+    fun `should add two fractions with one negative fraction`() {
+        val result = Fraction(-7,3).add(Fraction(4,5))
+
+        assertEquals(Fraction(-23, 15), result)
+    }
+
+    @Test
     fun `should add two even numbers with different denominator returning a fraction`() {
         val result = Fraction(1,2).add(Fraction(1,4))
 
