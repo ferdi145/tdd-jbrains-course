@@ -1,3 +1,5 @@
+package com.github.ferdi145.fraction
+
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
