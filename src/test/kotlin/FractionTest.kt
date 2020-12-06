@@ -10,17 +10,24 @@ class FractionTest {
     }
 
     @Test
-    fun `should add two fractions with different denominator`() {
+    fun `should add two fractions with different denominator returning a whole number`() {
         val result = Fraction(1,2).add(Fraction(2,4))
 
         assertEquals(Fraction(1,1), result)
     }
 
     @Test
-    fun `should calculate common denominator`() {
+    fun `should add two fractions with even denominators and distinct denominators returning a fraction`() {
         val result = Fraction(1,2).add(Fraction(1,4))
 
-        assertEquals(2, result.denominator)
+        assertEquals(Fraction(1, 2), result)
+    }
+
+    @Test
+    fun `should add two even numbers with different denominator returning a fraction`() {
+        val result = Fraction(1,2).add(Fraction(1,4))
+
+        assertEquals(Fraction(1, 2), result)
     }
 
     @Test
