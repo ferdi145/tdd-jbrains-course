@@ -24,6 +24,13 @@ class FractionTest {
     }
 
     @Test
+    fun `should add two fractions with uneven denominators and distinct denominators returning a fraction`() {
+        val result = Fraction(7,3).add(Fraction(4,5))
+
+        assertEquals(Fraction(47, 15), result)
+    }
+
+    @Test
     fun `should add two even numbers with different denominator returning a fraction`() {
         val result = Fraction(1,2).add(Fraction(1,4))
 
